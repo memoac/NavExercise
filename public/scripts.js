@@ -1,15 +1,15 @@
 //Loading Json File
 function loadJSON(callback) {   
 
-  var xobj = new XMLHttpRequest();
-  xobj.overrideMimeType("application/json");
-  xobj.open('GET', 'nav.json', true); 
-  xobj.onreadystatechange = function () {
-    if (xobj.readyState == 4 && xobj.status == "200") {
-      callback(xobj.responseText);
-    }
-  };
-  xobj.send(null); 
+	var xobj = new XMLHttpRequest();
+	xobj.overrideMimeType("application/json");
+	xobj.open('GET', 'nav.json', true); 
+	xobj.onreadystatechange = function () {
+		if (xobj.readyState == 4 && xobj.status == "200") {
+		  callback(xobj.responseText);
+		}
+	};
+	xobj.send(null); 
 }//END Loading Json File
 
 //Init Menu and Json File
@@ -46,23 +46,16 @@ function init() {
 			}
 		}
 
-		//Variables
+		//Selectors
 		var navAnchor = document.querySelectorAll("#menu ul li .link");
 		var menuOverlay =document.querySelectorAll(".overlay-menu");
-
 		var hamburguer = document.querySelectorAll(".hamburguer");
 		var figureBar = document.querySelectorAll("figure");
 		var navMobile = document.querySelectorAll(".mainMenu");
 		var dropDown = document.querySelectorAll(".hasDrop");
 		var dropDownOpen = document.querySelectorAll(".hasDrop.open");
 		var allList = document.querySelectorAll(".link");
-
-
 		var main = document.querySelectorAll("main");
-
-
-
-
 
 
 		var hasOpen = false;
@@ -79,7 +72,6 @@ function init() {
 				}			
 			}
 		}
-
 
 	    var open = false;
 	    hamburguer[0].onclick = function (event) {
