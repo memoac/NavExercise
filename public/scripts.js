@@ -20,10 +20,12 @@ function init() {
 		var actual_JSON = JSON.parse(response);
 		console.log(actual_JSON.items);
 
-		var list = document.querySelectorAll("#menu ul");	
+		var list = document.querySelectorAll("#menu ul");
+
+		//Menu Building from JSON file	
 		var classDrop ='';
 		for (i = 0; i < actual_JSON.items.length; i++) { 	
-		if(actual_JSON.items[i].items != 0){
+		if(actual_JSON.items[i].items != 0){//Determines if contains a submenu
 			classDrop ='hasDrop';
 		}
 		else{
@@ -44,7 +46,8 @@ function init() {
 				};
 				cont++;
 			}
-		}
+		}//END Menu Building from JSON file	
+		
 
 		//Selectors
 		var navAnchor = document.querySelectorAll("#menu ul li .link");
@@ -73,6 +76,7 @@ function init() {
 			}
 		}
 
+		//Click Event on Hamburguer Menu
 	    var open = false;
 	    hamburguer[0].onclick = function (event) {
 	    	event.preventDefault();
@@ -92,9 +96,9 @@ function init() {
 		    	main[0].classList.add("open");
 		    	open = true;
 		    }      
-	    }
+	    }//END Click Event on Hamburguer Menu
 
-		//Allow submenu and overlay to close
+		//Allow submenu and overlay to close when clicked on overlay
 		menuOverlay[0].onclick = function () { 
 			menuOverlay[0].classList.remove("open");
 			for (i = 0; i < navAnchor.length; i++) { 
@@ -107,7 +111,7 @@ function init() {
 
 				}	
 			}
-		}
+		}//END Allow submenu and overlay to close
 
 		//Watch a click event for the menu items so that they can display a submenu
 		for (i = 0; i < navAnchor.length; i++) { 			
@@ -139,8 +143,8 @@ function init() {
 
 				}
 			};
-		}
-
+		}//END watch click events for menu items
+		
 	});
 
 }//END Init Menu and Json File
